@@ -1,0 +1,274 @@
+{
+  "inspected_utc": "2026-10-04",
+  "steam_build_id": "25315876",
+  "unity_version": "6000.0.52f1",
+  "backend": "IL2CPP",
+  "metadata_version": 31,
+  "bepinex_present": false,
+  "profile_bundle": "e87f1ece0ff5d58d1a3f980c22f1b978.bundle",
+  "profile_bundle_sha256": "2f512af14a7d775ba74bbf29ee497c469db97e087a82aedd97214b1dd2af27e8",
+  "profile_count_in_bundle": 53,
+  "chromatic_aberration_profiles": [
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_Afternoon.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.05
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_AfternoonRain.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.05
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_AfternoonStorm.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.05
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_Morning.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.048
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_MorningRain.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.05
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_MorningStorm.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.05
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_Night.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.042
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Farm/Farm_NightRain.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.05
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_A_Day.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.15
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_A_Night.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_A_Rain.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_B_Day.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_B_Night.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_B_Rain.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_C.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.25
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_D.asset",
+      "active": false,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_E.asset",
+      "active": false,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/FishFarm/Aquarium_G.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/A_001 Global Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/A_001 Global_Luminous Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/A_001 Global_Night Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/A_001 Global_Rain Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/A_001_Surface Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.07
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/A_001_Surface_Night Profile.asset",
+      "active": false,
+      "override": true,
+      "intensity": 0.07
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/A_001_Surface_Rain Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/B_001 Global Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/B_001 Global_Boss001.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/B_001 Global_Night Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/B_003_Cave.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/BulletTime Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 1.0
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/C_001 GateArea.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.25
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/C_001 Test Global.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.25
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/ControlCenter Dark Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/ControlCenter Global Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/GA_D03_UnderWater02 Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/IceArea_Basic.asset",
+      "active": false,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/IceArea_Ice.asset",
+      "active": false,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/Ice_Shooting.asset",
+      "active": false,
+      "override": true,
+      "intensity": 0.1
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVill_GlacierCave_Puzzle.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVill_InsideRestaurant Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVill_InsideSeedShop Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVillage_Recordroom.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.2
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Minigames/Duff_Concert Profile.asset",
+      "active": true,
+      "override": true,
+      "intensity": 0.15
+    }
+  ],
+  "render_hook_candidate": "UnityEngine.Rendering.Universal.PostProcessPass.SetupChromaticAberration(Material)",
+  "runtime_visual_verification": false,
+  "game_files_modified": false
+}

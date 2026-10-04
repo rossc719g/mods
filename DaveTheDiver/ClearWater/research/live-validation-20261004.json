@@ -1,0 +1,133 @@
+{
+  "dateUtc": "2026-10-04",
+  "steamBuild": "25315876",
+  "unity": "6000.0.52f1",
+  "loader": "6.0.0-be.788+5b766a3",
+  "pluginVersion": "0.1.0",
+  "pluginSha256": "7d1eceb803ceba19deaa5c7cf2d2bd1b8315bac2849dd1a0a94d85705768cab1",
+  "controlUrl": "http://<gaming-computer>:18780",
+  "observedScenes": [
+    "DR_Logo",
+    "DR_Lobby",
+    "GlacialArea_Main_01"
+  ],
+  "volumeBindingsFound": 19,
+  "hookStateAtLastObservation": {
+    "volume": true,
+    "renderPass": true,
+    "chromatic": true,
+    "camerasProcessed": 53531,
+    "passesSeen": 427326,
+    "lastRenderFrame": 13842,
+    "lastError": null,
+    "errors": []
+  },
+  "effectsWithNonzeroSuppressionCounts": [
+    {
+      "id": "chromaticAberration",
+      "valuesSuppressed": 6714,
+      "passesSuppressed": 0
+    },
+    {
+      "id": "colorSplit",
+      "valuesSuppressed": 738,
+      "passesSuppressed": 0
+    },
+    {
+      "id": "refraction",
+      "valuesSuppressed": 738,
+      "passesSuppressed": 0
+    },
+    {
+      "id": "depthOfField",
+      "valuesSuppressed": 9519,
+      "passesSuppressed": 0
+    },
+    {
+      "id": "verticalBlur",
+      "valuesSuppressed": 49295,
+      "passesSuppressed": 0
+    },
+    {
+      "id": "vignette",
+      "valuesSuppressed": 12112,
+      "passesSuppressed": 0
+    }
+  ],
+  "remoteRequestValidation": [
+    {
+      "patch": {
+        "enabled": true
+      },
+      "acknowledgedRevision": 2,
+      "renderedRevision": 2,
+      "persistedRevision": 2,
+      "scene": "DR_Lobby"
+    },
+    {
+      "patch": {
+        "effects": {
+          "colorSplit": true,
+          "refraction": true
+        }
+      },
+      "acknowledgedRevision": 3,
+      "renderedRevision": 3,
+      "persistedRevision": 3,
+      "scene": "DR_Lobby"
+    }
+  ],
+  "observedUserMasterSwitchComparisons": [
+    {
+      "revision": 5,
+      "enabled": true,
+      "renderedRevision": 5,
+      "persistedRevision": 5,
+      "verticalBlurOriginal": "0.1",
+      "verticalBlurEffective": "0"
+    },
+    {
+      "revision": 6,
+      "enabled": false,
+      "renderedRevision": 6,
+      "persistedRevision": 6,
+      "verticalBlurOriginal": "0.1",
+      "verticalBlurEffective": "0.1"
+    },
+    {
+      "revision": 8,
+      "enabled": false,
+      "renderedRevision": 8,
+      "persistedRevision": 8,
+      "verticalBlurOriginal": "0.1",
+      "verticalBlurEffective": "0.1"
+    },
+    {
+      "revision": 9,
+      "enabled": true,
+      "renderedRevision": 9,
+      "persistedRevision": 9,
+      "verticalBlurOriginal": "0.1",
+      "verticalBlurEffective": "0"
+    }
+  ],
+  "browserCheck": {
+    "url": "http://<gaming-computer>:18780",
+    "page": "Clear Waters \u00b7 Dave the Diver",
+    "switchCount": 22,
+    "javascriptErrors": [],
+    "status": "Connected \u00b7 changes applied and saved"
+  },
+  "userFeedback": {
+    "dateUtc": "2026-10-04",
+    "underwaterViewWithFilterOn": "Noticeably clearer",
+    "settingsUsed": "defaults",
+    "chromaticAberrationComparison": "Huge improvement; most other individual switches had a small or unnoticeable effect in the scenes compared.",
+    "mirrorSpecificFeedback": "Mirror transitions are much better with the default settings."
+  },
+  "limits": [
+    "Suppression counters measure camera values, not pixels or subjective comfort.",
+    "Charlie confirmed improved underwater clarity and mirror transitions; prevention of headaches over longer sessions has not been established.",
+    "The render-pass hook ran, but no targeted pass skip was recorded in this observation; other triggered effects still need scene-specific checks."
+  ]
+}

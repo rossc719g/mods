@@ -1,0 +1,414 @@
+{
+  "inspected_utc": "2026-10-04",
+  "steam_build_id": "25315876",
+  "scope_requested": "Remove chromatic aberration, underwater peripheral blur and double vision, ColorSplit, and headache-inducing magic-mirror visual effects.",
+  "mirror": {
+    "prefab": "Assets/Contents/Singletons/GlobalPPManager.prefab",
+    "bundle": "0dcde0b9cc8e49feee461524ded15b1c.bundle",
+    "controller": "GlobalPPManager.MirrorPPV / PPMirrorValue",
+    "color_split": {
+      "disabled_in_prefab": false,
+      "max_offset": 1.0,
+      "duration_seconds": 2.2
+    },
+    "refraction": {
+      "field_spelling": "reflactionPPV",
+      "disabled_in_prefab": false,
+      "max_amount": 0.1,
+      "duration_seconds": 2.2
+    },
+    "global_profile_effects": [
+      {
+        "name": "Danger",
+        "active_by_default": false
+      },
+      {
+        "name": "Pixelize",
+        "active_by_default": false
+      },
+      {
+        "name": "SpeedLines",
+        "active_by_default": false
+      },
+      {
+        "name": "Refraction",
+        "active_by_default": false
+      },
+      {
+        "name": "ColorSplit",
+        "active_by_default": false
+      },
+      {
+        "name": "ColorAdjustments",
+        "active_by_default": false
+      }
+    ]
+  },
+  "metadata_targets": [
+    {
+      "index": 6251,
+      "name": "PPMirrorValue",
+      "fields": [
+        "colorSplitPPV",
+        "reflactionPPV"
+      ],
+      "methods": [
+        "get_SoundConfigName",
+        ".ctor",
+        "RegistMemberPPV"
+      ]
+    },
+    {
+      "index": 6254,
+      "name": "PPColorSplitValue",
+      "fields": [
+        "MaxOffset",
+        "duration",
+        "curve"
+      ],
+      "methods": [
+        "OffPP_Imple",
+        "OnPP_Imple",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 6257,
+      "name": "PPReflactionValue",
+      "fields": [
+        "MaxAmount",
+        "duration",
+        "curve"
+      ],
+      "methods": [
+        "OffPP_Imple",
+        "OnPP_Imple",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 8001,
+      "name": "GlobalPPManager",
+      "fields": [
+        "volume",
+        "vcRefCnt",
+        "soundConfigs",
+        "EnterDangerPPV",
+        "PixelizePPV",
+        "MirrorPPV",
+        "ColorAdjustmentPPV"
+      ],
+      "methods": [
+        "get_GetSoundConfigs",
+        "GetVC_RefCntIncreased",
+        "Awake_Impl",
+        "Reset",
+        "CompareIPP",
+        "RemovePP",
+        "TrySetOffPP",
+        "GetVC",
+        "MakeInstance",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 16713,
+      "name": "DR.Rendering.RadialBlurRendererFeature",
+      "fields": [
+        "m_RenderSettings"
+      ],
+      "methods": [
+        "SetEnable",
+        "get_RenderSettings",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 16716,
+      "name": "DR.Rendering.RipplesRendererFeature",
+      "fields": [
+        "m_RenderSettings"
+      ],
+      "methods": [
+        "SetEnable",
+        "get_RenderSettings",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 31745,
+      "name": "UnityEngine.Rendering.Universal.DepthOfField",
+      "fields": [
+        "mode",
+        "gaussianStart",
+        "gaussianEnd",
+        "gaussianMaxRadius",
+        "highQualitySampling",
+        "focusDistance",
+        "aperture",
+        "focalLength",
+        "bladeCount",
+        "bladeCurvature",
+        "bladeRotation"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 31754,
+      "name": "UnityEngine.Rendering.Universal.MotionBlur",
+      "fields": [
+        "mode",
+        "quality",
+        "intensity",
+        "clamp"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 39238,
+      "name": "SCPE.Blur",
+      "fields": [
+        "mode",
+        "highQuality",
+        "distanceFade",
+        "startFadeDistance",
+        "endFadeDistance",
+        "amount",
+        "iterations",
+        "downscaling",
+        "shader"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        "Reset",
+        "SerializeShader",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 39251,
+      "name": "SCPE.ColorSplit",
+      "fields": [
+        "mode",
+        "offset",
+        "edgeMasking",
+        "luminanceThreshold",
+        "shader"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        "Reset",
+        "SerializeShader",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 39270,
+      "name": "SCPE.DoubleVision",
+      "fields": [
+        "mode",
+        "intensity",
+        "shader"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        "Reset",
+        "SerializeShader",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 39349,
+      "name": "SCPE.RadialBlur",
+      "fields": [
+        "amount",
+        "center",
+        "angle",
+        "iterations",
+        "shader"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        "Reset",
+        "SerializeShader",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 39352,
+      "name": "SCPE.Refraction",
+      "fields": [
+        "normalMap",
+        "amount",
+        "tint",
+        "shader"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        "Reset",
+        "SerializeShader",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 39357,
+      "name": "SCPE.Ripples",
+      "fields": [
+        "mode",
+        "strength",
+        "distance",
+        "speed",
+        "width",
+        "height",
+        "shader"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        "Reset",
+        "SerializeShader",
+        ".ctor"
+      ]
+    },
+    {
+      "index": 39399,
+      "name": "SCPE.TiltShift",
+      "fields": [
+        "amount",
+        "mode",
+        "quality",
+        "areaSize",
+        "areaFalloff",
+        "offset",
+        "angle",
+        "debug",
+        "shader"
+      ],
+      "methods": [
+        "IsActive",
+        "IsTileCompatible",
+        "Reset",
+        "SerializeShader",
+        ".ctor"
+      ]
+    }
+  ],
+  "underwater_depth_of_field_profiles": [
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/B_001 Global_Boss001.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/ControlCenter Dark Profile.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/ControlCenter Global Profile.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/GA_D03_UnderWater02 Profile.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/GlacialArea_Dungeon Global Profile.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/IceArea_Basic.asset",
+      "active": false,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/IceArea_Ice.asset",
+      "active": false,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/Ice_Shooting.asset",
+      "active": false,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVill_GlacierCave_Puzzle.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVill_InsideRestaurant Profile.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVill_InsideSeedShop Profile.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    },
+    {
+      "profile": "Assets/Scenes/InGame/001DR/PP/Ingame/MermanVillage_Recordroom.asset",
+      "active": true,
+      "mode": {
+        "m_OverrideState": 1,
+        "m_Value": 2
+      }
+    }
+  ],
+  "limits": [
+    "Static asset and metadata inspection only; no runtime visual comparison.",
+    "DoubleVision, TiltShift, RadialBlur, Refraction, Ripples, and Blur support exists; the precise contribution of each to the reported underwater edge symptoms is not established.",
+    "GlobalPP profile ColorSplit and Refraction start inactive; the mirror controller supplies animated settings.",
+    "Any implementation must preserve teleport/transition completion callbacks. Suppress the visual output independently of interaction logic."
+  ],
+  "game_files_modified": false
+}

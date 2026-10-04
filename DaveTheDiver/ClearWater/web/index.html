@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Clear Waters · Dave the Diver</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">DAVE THE DIVER</p>
+      <h1>Clear Waters</h1>
+      <p class="intro">A calmer, clearer view.</p>
+      <p id="connection" role="status">Connecting to the game…</p>
+    </header>
+    <p id="error" role="alert" hidden></p>
+    <section class="master" aria-labelledby="master-title">
+      <label class="switch-row" for="master">
+        <span><strong id="master-title">Clarity filter</strong><span id="master-help">Checked effects below are removed while this is on.</span></span>
+        <input id="master" type="checkbox" role="switch" disabled>
+      </label>
+    </section>
+    <div class="section-intro">
+      <p>Choose effects to remove</p>
+      <div class="switch-actions">
+        <button id="all-off" disabled>All switches off</button>
+        <button id="defaults" disabled>Restore defaults</button>
+      </div>
+    </div>
+    <p class="switch-help">To compare effects, keep Clarity filter on and enable individual switches one at a time.</p>
+    <div id="groups" aria-busy="true"></div>
+    <p class="footnote">Changes are saved automatically and take effect as the game renders. If the game is paused or unfocused, resume play to see them. Object lights, particles, and water materials are not modified.</p>
+    <section id="web-controls" class="web-controls" aria-labelledby="web-title" hidden>
+      <h2 id="web-title">Finish adjusting</h2>
+      <p>Save your choices and turn off these web controls. The clarity filter will keep using your chosen settings.</p>
+      <button id="stop-web" disabled>Save and stop web controls</button>
+      <p class="switch-help">To open these controls again, set Enabled = true under [Server] in BepInEx/config/local.dave.clearwaters.cfg, then restart the game.</p>
+      <p id="stop-result" role="status" hidden></p>
+    </section>
+    <footer>Clear Waters <span id="version"></span> · Local browser controls</footer>
+  </main>
+</body>
+</html>

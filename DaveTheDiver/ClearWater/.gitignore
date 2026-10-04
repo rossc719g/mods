@@ -1,0 +1,7 @@
+.deps/
+**/bin/
+**/obj/
+test-results/
+node_modules/
+*.user
+__pycache__/

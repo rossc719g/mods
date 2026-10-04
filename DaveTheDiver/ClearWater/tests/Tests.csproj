@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(EnableWebFileOverrides)' == 'true'">
+    <DefineConstants>$(DefineConstants);WEB_FILE_OVERRIDES</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(EnableRenderDiagnostics)' == 'true'">
+    <DefineConstants>$(DefineConstants);RENDER_DIAGNOSTICS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../web/index.html;../web/app.js;../web/style.css" LogicalName="ClearWaters.Web.%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="../src/ClearWaters/Effects.cs" Link="Effects.cs" />
+    <Compile Include="../src/ClearWaters/SettingsStore.cs" Link="SettingsStore.cs" />
+    <Compile Include="../src/ClearWaters/ModConfiguration.cs" Link="ModConfiguration.cs" />
+    <Compile Include="../src/ClearWaters/ControlServer.cs" Link="ControlServer.cs" />
+    <Compile Include="../src/ClearWaters/TransientOverride.cs" Link="TransientOverride.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="../.deps/loader/BepInEx/core/BepInEx.Core.dll" />
+    <None Include="../.deps/loader/BepInEx/core/*.dll" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>ClearWaters</AssemblyName>
+    <Version>0.2.0</Version>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(EnableWebFileOverrides)' == 'true'">
+    <DefineConstants>$(DefineConstants);WEB_FILE_OVERRIDES</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(EnableRenderDiagnostics)' == 'true'">
+    <DefineConstants>$(DefineConstants);RENDER_DIAGNOSTICS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../../web/index.html;../../web/app.js;../../web/style.css" LogicalName="ClearWaters.Web.%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="../../.deps/loader/BepInEx/core/BepInEx.Core.dll;../../.deps/loader/BepInEx/core/BepInEx.Unity.IL2CPP.dll;../../.deps/loader/BepInEx/core/Il2CppInterop.Runtime.dll;../../.deps/loader/BepInEx/core/0Harmony.dll"><Private>false</Private></Reference>
+    <Reference Include="../../.deps/interop/Il2Cppmscorlib.dll;../../.deps/interop/Unity.RenderPipelines.Core.Runtime.dll;../../.deps/interop/Unity.RenderPipelines.Universal.Runtime.dll;../../.deps/interop/sc.posteffects.runtime.dll"><Private>false</Private></Reference>
+    <!-- Unity's generated NullableAttribute is incomplete; keep it out of the global namespace. -->
+    <Reference Include="../../.deps/interop/UnityEngine.CoreModule.dll"><Private>false</Private><Aliases>UnityCore</Aliases></Reference>
+    <Reference Include="../../.deps/interop/Assembly-CSharp.dll"><Private>false</Private><Aliases>Game</Aliases></Reference>
+  </ItemGroup>
+</Project>
