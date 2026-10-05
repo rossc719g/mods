@@ -8,6 +8,8 @@ The mod works immediately with its defaults. Browser controls are optional and
 **disabled by default** on new installations. All preferences live in one
 commented configuration file.
 
+[Download on Nexus Mods](https://www.nexusmods.com/davethediver/mods/66)
+
 ![Clear Waters promotional cover artwork](media/clear-waters-cover.png)
 
 [In-game comparisons and original screenshots](media/README.md)
@@ -178,3 +180,19 @@ runtime. It restores original values before the next camera update, without
 changing source profiles or skipping gameplay callbacks. Runtime rendering
 diagnostics are collected only in builds with that option enabled. Ordinary
 startup and error logging remains in all builds.
+
+## Nexus page text
+
+[NEXUS_DESCRIPTION.bbcode](NEXUS_DESCRIPTION.bbcode) contains the full
+description in Nexus's BBCode format. Open the file's **Raw** view on GitHub,
+copy all of its contents, and paste into the description editor's **Source**
+view. Switch back to the formatted view to check it, then save.
+
+[NEXUS_SUMMARY.txt](NEXUS_SUMMARY.txt) is the separate plain-text short summary.
+Paste it into the Summary field. The description file contains only the full
+description, so it can be copied in its entirety.
+
+Keep BBCode paragraphs on single source lines, with blank lines between them;
+line breaks inside the configuration example are intentional. Nexus's
+[BBCode documentation](https://www.nexusmods.com/news/14897) explains the
+formatting and tag-nesting requirements.

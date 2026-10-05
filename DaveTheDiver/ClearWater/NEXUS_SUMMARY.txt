@@ -1,0 +1,1 @@
+Remove chromatic aberration, blur, color splitting, and other screen effects in Dave the Diver. Includes 21 individual switches and optional browser controls.

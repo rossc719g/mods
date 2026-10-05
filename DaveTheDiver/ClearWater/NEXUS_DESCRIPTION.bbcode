@@ -1,0 +1,48 @@
+Clear Waters lets you choose which screen effects to remove from Dave the Diver, for a clearer picture with fewer visual distortions. It can remove colored fringes around the screen edges, double vision, blur, and the color splitting and refraction used by magic-mirror transitions.
+
+There are [b]21 individual switches[/b] and one master switch. Use the defaults, or adjust each effect to suit your preferences. Turning the master off allows the game's original effects while remembering your choices.
+
+[size=4][b]Effects you can remove[/b][/size]
+
+[list]
+[*][b]Color separation and distortion:[/b] chromatic aberration, ColorSplit, double vision, screen refraction, ripples, lens distortion, Panini projection, and screen glitch.
+[*][b]Blur:[/b] depth of field, motion blur, tilt shift, radial blur, full-screen blur, vertical blur, and camera blur.
+[*][b]Overlays:[/b] extra pixelation, film grain, vignette, speed lines, the danger overlay, and bloom.
+[/list]
+
+[b]Bloom and the danger overlay are kept by default.[/b] Object lights, particles, and water materials are not modified. Some switches only matter in scenes that use those effects. Camera shake, environmental fog, color grading, and transition fades are outside the mod's scope.
+
+[size=4][b]Installation[/b][/size]
+
+Requires the Windows 64-bit game and [b]BepInEx 6 for Unity IL2CPP, Windows x64[/b]. The current target is Steam build [b]25315876[/b] with [url=https://builds.bepinex.dev/projects/bepinex_be/788/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788%2B5b766a3.zip]BepInEx 6.0.0-be.788+5b766a3[/url].
+
+[list=1]
+[*]Close the game. Install the matching BepInEx loader in the folder containing [font=Courier New]DaveTheDiver.exe[/font] if it is not already installed.
+[*]Extract the mod ZIP into that folder. The plugin should be at [font=Courier New]BepInEx/plugins/ClearWaters/ClearWaters.dll[/font].
+[*]Start the game. The filter uses its defaults and creates a complete, commented configuration file. The first BepInEx startup can take longer.
+[/list]
+
+[size=4][b]Settings and optional browser controls[/b][/size]
+
+All settings are in [font=Courier New]BepInEx/config/local.dave.clearwaters.cfg[/font]. Edit it with the game closed. Under [font=Courier New][Visuals][/font], [font=Courier New]Enabled[/font] controls the master switch. Under [font=Courier New][Visuals.RemoveEffects][/font], [b][font=Courier New]true[/font] removes an effect; [font=Courier New]false[/font] allows it[/b]. Missing settings use their defaults, and every save writes the complete file.
+
+[b]Browser controls are disabled by default.[/b] To experiment during play, enable this setting before starting the game:
+
+[code]
+[Server]
+Enabled = true
+[/code]
+
+You can create a new configuration containing just those two lines. The mod fills in everything else. Open [b][url=http://localhost:18780]http://localhost:18780[/url][/b] on the gaming computer while the game is running.
+
+Keep the master on and use [b]All switches off[/b] to compare removals one at a time. [b]Restore defaults[/b] returns to the default selections. Changes save automatically. Resume a paused or unfocused game to see them.
+
+[b]Save and stop web controls[/b] shuts down the service while keeping your chosen settings active. Reopening it requires enabling the server in the file and restarting the game.
+
+Access defaults to the gaming computer only. Optional LAN access has no password and is intended for trusted networks. Clear Waters makes no outgoing telemetry or update requests.
+
+[size=4][b]Removal and source[/b][/size]
+
+To uninstall, close the game and remove [font=Courier New]BepInEx/plugins/ClearWaters[/font]. BepInEx can remain for other mods.
+
+[url=https://github.com/rossc719g/mods/tree/main/DaveTheDiver/ClearWater]Source code and full instructions[/url] are available on GitHub. The mod's code, browser interface, and promotional artwork were created with AI. The comparison images use actual gameplay screenshots with unaltered detail crops.
