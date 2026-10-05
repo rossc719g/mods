@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Clear Waters — screenshot comparison</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #09151f; color: #edf5f7; font-family: Arial, sans-serif; }
+      .card { width: 2560px; height: 1600px; padding: 60px 80px 40px; }
+      header { height: 124px; display: flex; align-items: flex-start; gap: 26px; }
+      .mark { width: 104px; height: 104px; margin-top: 4px; }
+      .eyebrow { margin: 0 0 8px; color: #96b2c2; font-size: 21px; letter-spacing: 4px; }
+      h1 { margin: 0; font-size: 74px; line-height: 1; letter-spacing: -2px; }
+      .tagline { margin: 10px 0 0 auto; max-width: 650px; font-size: 32px; line-height: 1.4; color: #b8cdd6; text-align: right; }
+      .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+      h2 { margin: 0; font-size: 31px; font-weight: 500; }
+      .label { height: 64px; display: flex; gap: 18px; align-items: flex-start; }
+      .badge { padding: 6px 13px; border-radius: 5px; background: #2a3943; color: #e0e9ed; font-weight: 700; font-size: 21px; letter-spacing: 1px; }
+      .on .badge { color: #0b2a25; background: #73c8b4; }
+      .frame { position: relative; width: 1184px; height: 666px; overflow: hidden; background: #101b24; }
+      .frame > img { display: block; width: 100%; height: 100%; }
+      .callout { position: absolute; border: 2px solid #f3edba; color: #09151f; }
+      .callout span { position: absolute; top: -26px; left: -2px; height: 26px; min-width: 26px; padding: 1px 6px; background: #f3edba; font-size: 20px; font-weight: bold; }
+      .left-box { left: 0; top: 45.14%; width: 15%; height: 20%; }
+      .right-box { right: 0; top: 57.87%; width: 15%; height: 20%; }
+      .on .left-box { top: 42.96%; }
+      .on .right-box { top: 55.19%; }
+      .detail-heading { height: 87px; margin: 0; display: flex; align-items: center; justify-content: space-between; font-size: 25px; color: #b8cdd6; }
+      .detail-heading span { font-size: 20px; color: #839dab; }
+      .details { display: grid; grid-template-columns: 576px 576px; gap: 32px; }
+      figure { margin: 0; }
+      figcaption { height: 44px; font-size: 21px; letter-spacing: 1px; color: #d1e2e7; }
+      figcaption b { color: #f3edba; margin-right: 8px; }
+      canvas { display: block; width: 576px; height: 432px; }
+      footer { margin-top: 30px; border-top: 1px solid #263e49; padding-top: 21px; display: flex; justify-content: space-between; gap: 30px; color: #9bb5c2; font-size: 23px; line-height: 1.4; }
+      footer strong { color: #c8e7df; font-weight: 500; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <header>
+        <img class="mark" src="../web/favicon.svg" alt="">
+        <div><p class="eyebrow">DAVE THE DIVER</p><h1>Clear Waters</h1></div>
+        <p class="tagline">A clearer view, from edge to edge.<br>Choose which screen effects to remove.</p>
+      </header>
+      <div class="columns">
+        <section class="off">
+          <div class="label"><span class="badge">OFF</span><h2>Original screen effects</h2></div>
+          <div class="frame">
+            <img id="off" src="screenshots/clear-waters-off.jpg" alt="Clarity filter off: colored fringes and softened edges in the underwater cave.">
+            <div class="callout left-box"><span>A</span></div><div class="callout right-box"><span>B</span></div>
+          </div>
+          <p class="detail-heading">Look at the screen edges<span>Original pixels · 100% size</span></p>
+          <div class="details">
+            <figure><figcaption><b>A</b> LEFT EDGE · CORAL</figcaption><canvas data-source="off" data-x="0" data-y="975" width="576" height="432"></canvas></figure>
+            <figure><figcaption><b>B</b> RIGHT EDGE · ROCKS</figcaption><canvas data-source="off" data-x="3264" data-y="1250" width="576" height="432"></canvas></figure>
+          </div>
+        </section>
+        <section class="on">
+          <div class="label"><span class="badge">ON</span><h2>Clear Waters enabled</h2></div>
+          <div class="frame">
+            <img id="on" src="screenshots/clear-waters-on.jpg" alt="Clarity filter on: clearer coral and rock edges in the same cave.">
+            <div class="callout left-box"><span>A</span></div><div class="callout right-box"><span>B</span></div>
+          </div>
+          <p class="detail-heading">Compare the coral and rock outlines<span>Original pixels · 100% size</span></p>
+          <div class="details">
+            <figure><figcaption><b>A</b> LEFT EDGE · CORAL</figcaption><canvas data-source="on" data-x="0" data-y="928" width="576" height="432"></canvas></figure>
+            <figure><figcaption><b>B</b> RIGHT EDGE · ROCKS</figcaption><canvas data-source="on" data-x="3264" data-y="1192" width="576" height="432"></canvas></figure>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <span>Actual gameplay, captured 3 seconds apart. Slight camera movement between shots.</span>
+        <strong>Multiple effects toggled · No image enhancement</strong>
+      </footer>
+    </main>
+    <script>
+      window.mediaReady = (async () => {
+        await Promise.all([...document.images].map(image => image.decode()));
+        for (const canvas of document.querySelectorAll('canvas')) {
+          const source = document.getElementById(canvas.dataset.source);
+          if (source.naturalWidth !== 3840 || source.naturalHeight !== 2160) throw new Error('Expected original 3840×2160 screenshots');
+          const context = canvas.getContext('2d');
+          context.drawImage(source, Number(canvas.dataset.x), Number(canvas.dataset.y), canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+        }
+      })();
+    </script>
+  </body>
+</html>

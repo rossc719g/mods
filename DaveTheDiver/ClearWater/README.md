@@ -8,6 +8,10 @@ The mod works immediately with its defaults. Browser controls are optional and
 **disabled by default** on new installations. All preferences live in one
 commented configuration file.
 
+![Clear Waters off and on, with close-ups of both screen edges](media/clear-waters-comparison.png)
+
+[Original screenshots and comparison details](media/README.md)
+
 ## Requirements
 
 - Dave the Diver for Windows, 64-bit. The current target is Steam build
@@ -148,8 +152,9 @@ no longer used for settings.
 ## Source and builds
 
 The plugin is C#, targeting .NET 6 with the .NET 8 SDK. The project embeds the
-three files in `web/` as assembly resources. Game assemblies and generated
-bindings are build dependencies and are not included in the source or mod ZIP.
+page, script, stylesheet, and favicon in `web/` as assembly resources. Game
+assemblies and generated bindings are build dependencies and are not included in
+the source or mod ZIP.
 
 Public builds use only embedded web resources. Development builds can enable
 live file overrides with `-p:EnableWebFileOverrides=true`, which defines

@@ -16,7 +16,7 @@
     <DefineConstants>$(DefineConstants);RENDER_DIAGNOSTICS</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="../../web/index.html;../../web/app.js;../../web/style.css" LogicalName="ClearWaters.Web.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../web/index.html;../../web/app.js;../../web/style.css;../../web/favicon.svg" LogicalName="ClearWaters.Web.%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="../../.deps/loader/BepInEx/core/BepInEx.Core.dll;../../.deps/loader/BepInEx/core/BepInEx.Unity.IL2CPP.dll;../../.deps/loader/BepInEx/core/Il2CppInterop.Runtime.dll;../../.deps/loader/BepInEx/core/0Harmony.dll"><Private>false</Private></Reference>

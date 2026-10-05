@@ -112,7 +112,7 @@ public sealed class ControlServer : IDisposable
                 if (path == "/api/state") Json(stream, ReadControlState(), head);
                 else if (path == "/api/settings") Json(stream, new { settings = settings.Current }, head);
                 else if (path == "/api/health") Json(stream, new { status = "ok", game = "Dave the Diver", version = "0.2.0", webFileOverrides = SupportsWebFileOverrides, renderDiagnostics = SupportsRenderDiagnostics }, head);
-                else if (path is "/" or "/index.html" or "/app.js" or "/style.css") SendAsset(stream, path, head);
+                else if (path is "/" or "/index.html" or "/app.js" or "/style.css" or "/favicon.svg") SendAsset(stream, path, head);
                 else Reply(stream, 404, "Not found.", head);
             }
             else if ((method == "PATCH" && path == "/api/settings") || (method == "POST" && path == "/api/server/stop"))
@@ -185,7 +185,10 @@ public sealed class ControlServer : IDisposable
     private void SendAsset(Stream stream, string path, bool head)
     {
         var filename = path is "/" or "/index.html" ? "index.html" : path[1..];
-        var type = filename.EndsWith(".js") ? "application/javascript" : filename.EndsWith(".css") ? "text/css" : "text/html";
+        var type = Path.GetExtension(filename) switch {
+            ".js" => "application/javascript", ".css" => "text/css",
+            ".svg" => "image/svg+xml", _ => "text/html"
+        };
         try
         {
             using Stream file = OpenAsset(filename);

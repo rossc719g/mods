@@ -2,6 +2,6 @@
   "name": "clear-waters-checks",
   "version": "0.1.0",
   "private": true,
-  "scripts": { "test:browser": "node tests/browser.mjs" },
+  "scripts": { "test:browser": "node tests/browser.mjs", "media:render": "node media/render.mjs" },
   "devDependencies": { "playwright": "1.56.1" }
 }

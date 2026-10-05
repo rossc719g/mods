@@ -42,7 +42,7 @@ try {{
     if result.returncode != 0:
         parser.error('Could not verify live file-override support. Start a development build with web controls enabled. No files changed.')
 writes = {}
-web_files = ['index.html', 'app.js', 'style.css']
+web_files = ['index.html', 'app.js', 'style.css', 'favicon.svg']
 if args.web_only:
     for name in web_files:
         writes[plugin_relative / 'web' / name] = ROOT / 'web' / name

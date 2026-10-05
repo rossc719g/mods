@@ -12,6 +12,10 @@ try {
     const failures = [];
     page.on("pageerror", (e) => failures.push(e.message));
     await page.goto("http://localhost:18781");
+    const icon = await page.locator('link[rel="icon"]').getAttribute("href");
+    const iconResponse = await page.request.get(new URL(icon, page.url()).href);
+    assert.equal(iconResponse.status(), 200, "embedded favicon is available");
+    assert.match(iconResponse.headers()["content-type"], /^image\/svg\+xml\b/, "favicon is served as an SVG image");
     await page.waitForFunction(() => document.querySelectorAll('input[role="switch"]').length === 22);
     const master = page.locator("#master");
     await master.setChecked(true);

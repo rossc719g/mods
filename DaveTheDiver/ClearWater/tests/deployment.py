@@ -40,7 +40,7 @@ with tempfile.TemporaryDirectory(prefix='clearwaters-deploy-') as temporary:
     put('.deps/build-references.json', json.dumps({'files': {'game': 'unchanged'}}))
     put('.deps/unity-6000.0.52.zip', 'fake Unity library ZIP')
     put('.deps/loader/winhttp.dll', 'fake loader')
-    for name in ['index.html', 'app.js', 'style.css']:
+    for name in ['index.html', 'app.js', 'style.css', 'favicon.svg']:
         put('web/' + name, 'new ' + name)
     prepare = types.ModuleType('prepare')
     prepare.ROOT = root
@@ -66,7 +66,7 @@ with tempfile.TemporaryDirectory(prefix='clearwaters-deploy-') as temporary:
     config.write_text(preferences)
     check(deploy('--web-only', remote_result=10) == 2 and not (plugin / 'web').exists(), 'Web-only update refuses unsupported or unavailable runtime before writing')
     check(deploy('--web-only') == 0, 'Verified live web-only update succeeds')
-    check((plugin / 'web/app.js').read_text() == 'new app.js', 'Web-only writes live overrides')
+    check(all((plugin / 'web' / name).read_text() == 'new ' + name for name in ['index.html', 'app.js', 'style.css', 'favicon.svg']), 'Web-only writes all live overrides including the favicon')
     check((plugin / 'ClearWaters.dll').read_text() == 'public DLL' and config.read_text() == preferences, 'Web-only preserves DLL and preferences')
     put('game/BepInEx/plugins/ClearWaters/web/personal-note.txt', 'keep this')
 
@@ -75,9 +75,9 @@ with tempfile.TemporaryDirectory(prefix='clearwaters-deploy-') as temporary:
     check(deploy('--development') == 0, 'Development deployment succeeds when game is closed')
     check((plugin / 'ClearWaters.dll').read_text() == 'development DLL', 'Development DLL selected')
     check(config.read_text() == preferences, 'Upgrade preserves existing network choices')
-    check(not (plugin / 'web/app.js').exists() and (plugin / 'web/personal-note.txt').read_text() == 'keep this', 'Full update removes only the three known overrides')
+    check(all(not (plugin / 'web' / name).exists() for name in ['index.html', 'app.js', 'style.css', 'favicon.svg']) and (plugin / 'web/personal-note.txt').read_text() == 'keep this', 'Full update removes only the known overrides')
     manifest = json.loads((root / '.deps/deployment.json').read_text())
-    check(manifest['development'] and len(manifest['removedWebOverrides']) == 3, 'Manifest records development mode and archived overrides')
+    check(manifest['development'] and len(manifest['removedWebOverrides']) == 4, 'Manifest records development mode and archived overrides')
     backup = Path(manifest['backup'])
     check(all(digest(backup / entry['path']) == entry['sha256'] for entry in manifest['removedWebOverrides']), 'Removed overrides have verified recoverable backups')
 

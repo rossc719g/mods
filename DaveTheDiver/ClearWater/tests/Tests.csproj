@@ -10,7 +10,7 @@
     <DefineConstants>$(DefineConstants);RENDER_DIAGNOSTICS</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="../web/index.html;../web/app.js;../web/style.css" LogicalName="ClearWaters.Web.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../web/index.html;../web/app.js;../web/style.css;../web/favicon.svg" LogicalName="ClearWaters.Web.%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="../src/ClearWaters/Effects.cs" Link="Effects.cs" />

@@ -57,7 +57,7 @@ if (ControlServer.SupportsRenderDiagnostics) {
     Check((bool)diagnosticAssembly.GetType("ClearWaters.ControlServer")!.GetProperty("SupportsWebFileOverrides")!.GetValue(null)! == ControlServer.SupportsWebFileOverrides,
         "Rendering statistics and live web overrides are independent flags");
 }
-foreach (string filename in new[] { "index.html", "app.js", "style.css" }) {
+foreach (string filename in new[] { "index.html", "app.js", "style.css", "favicon.svg" }) {
     using var embedded = pluginAssembly.GetManifestResourceStream("ClearWaters.Web." + filename);
     Check(embedded != null, "Release DLL contains " + filename);
     using var bytes = new MemoryStream();
@@ -105,7 +105,7 @@ Check(!initialState.TryGetProperty("diagnostics", out _), "Normal builds publish
 #endif
 Check((await Request(Get("/", "HEAD"))).Body == "", "HEAD omits body");
 Check((await Request(Get("/"))).Body.Contains("Clear Waters"), "Control page is served");
-foreach (string filename in new[] { "index.html", "app.js", "style.css" }) {
+foreach (string filename in new[] { "index.html", "app.js", "style.css", "favicon.svg" }) {
     var response = await Request(Get("/" + filename));
     Check(response.Code == 200 && response.Body == File.ReadAllText(Path.Combine(root, "web", filename)), "Embedded " + filename + " served without any loose web files");
 }
@@ -121,7 +121,8 @@ try {
         Check((await Request(Get("/"))).Body == File.ReadAllText(Path.Combine(root, "web", "index.html")), "Public build ignores external HTML files");
         File.WriteAllText(Path.Combine(overrides, "app.js"), "broken JavaScript");
         File.WriteAllText(Path.Combine(overrides, "style.css"), "broken CSS");
-        foreach (string filename in new[] { "app.js", "style.css" })
+        File.WriteAllText(Path.Combine(overrides, "favicon.svg"), "broken SVG");
+        foreach (string filename in new[] { "app.js", "style.css", "favicon.svg" })
             Check((await Request(Get("/" + filename))).Body == File.ReadAllText(Path.Combine(root, "web", filename)), "Public build ignores external " + filename);
     }
     Check((await Request(Get("/app.js"))).Body == File.ReadAllText(Path.Combine(root, "web", "app.js")), "Partial overrides retain embedded files for other assets");
