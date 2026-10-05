@@ -1,15 +1,32 @@
 # Clear Waters release images
 
+## Promotional cover
+
+[Clear Waters cover](clear-waters-cover.png) — 1672 × 941 PNG. Use this as the
+first image and the mod's main listing image. It is AI-generated promotional
+artwork based on the mirror chamber, with the mod name and existing tagline.
+[Generation prompt and provenance](COVER_PROMPT.md).
+
+Suggested gallery order:
+
+1. Promotional cover.
+2. Mirror chamber comparison.
+3. Seaweed comparison.
+4. Cave comparison.
+5. Original screenshots, if desired.
+
+## In-game comparisons
+
 Three 2560 × 1600 PNG comparisons include full views and close-ups of the screen
 edges. Each has a pair of untouched 3840 × 2160 originals for individual
 uploads.
 
 ## Mirror chamber: hand and hanging ice
 
-[Mirror chamber comparison](clear-waters-mirror-comparison.png) is the main
-README image. It shows pronounced colored outlines and doubling around the
-lower-left hand and upper-right hanging ice. Captured four seconds apart. This
-is a view beside the mirror, not a capture of the teleport transition.
+[Mirror chamber comparison](clear-waters-mirror-comparison.png) shows pronounced
+colored outlines and doubling around the lower-left hand and upper-right hanging
+ice. Captured four seconds apart. This is a view beside the mirror, not a
+capture of the teleport transition.
 
 - [Clarity filter off](screenshots/clear-waters-mirror-off.jpg)
 - [Clarity filter on](screenshots/clear-waters-mirror-on.jpg)
@@ -76,5 +93,5 @@ device scale of 1 to preserve the detail crops' source pixels.
 
 The water-drop mark is [web/favicon.svg](../web/favicon.svg), also used by the
 web controls. It is embedded in the plugin DLL. The screenshots, comparison
-layout, and export tools are release-page materials and are not part of the DLL
-or mod ZIP.
+layout, promotional cover, and export tools are release-page materials and are
+not part of the DLL or mod ZIP.
