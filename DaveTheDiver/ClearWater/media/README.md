@@ -15,6 +15,14 @@ Suggested gallery order:
 4. Cave comparison.
 5. Original screenshots, if desired.
 
+## Page header
+
+[Clear Waters header](clear-waters-header.png) is the separate **1300 x 372
+PNG** banner for the top of the mod page. It matches the cover's lettering,
+water-drop mark, and mirror-chamber artwork. Use it in the page's Header field;
+the cover remains the first gallery image.
+[Generation prompt, original artwork, and export instructions](HEADER_PROMPT.md).
+
 ## In-game comparisons
 
 Three 2560 × 1600 PNG comparisons include full views and close-ups of the screen
@@ -55,7 +63,8 @@ All three pairs were captured in-game on October 4, 2026, using Clear Waters
 0.1.0. They show the combined clarity filter, including color fringing, blur,
 and edge darkening. They are not tests of chromatic aberration alone. The camera
 moved slightly between captures; animation and input prompts also differ. The
-release candidate still needs its own in-game validation.
+public 0.2.0 release was validated separately in-game; these captures remain
+from 0.1.0.
 
 The source JPEGs are byte-for-byte copies of the captures. The comparison adds
 labels and crop outlines to reduced full views, followed by native-resolution
@@ -93,5 +102,5 @@ device scale of 1 to preserve the detail crops' source pixels.
 
 The water-drop mark is [web/favicon.svg](../web/favicon.svg), also used by the
 web controls. It is embedded in the plugin DLL. The screenshots, comparison
-layout, promotional cover, and export tools are release-page materials and are
-not part of the DLL or mod ZIP.
+layout, promotional cover, page header, and export tools are release-page
+materials and are not part of the DLL or mod ZIP.

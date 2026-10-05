@@ -82,5 +82,5 @@ can remain for other mods.
 
 [Source code and full instructions](https://github.com/rossc719g/mods/tree/main/DaveTheDiver/ClearWater)
 are available on GitHub. The mod's code, browser interface, and promotional
-cover were created with AI. The comparison images use actual gameplay
+artwork were created with AI. The comparison images use actual gameplay
 screenshots with unaltered detail crops.
