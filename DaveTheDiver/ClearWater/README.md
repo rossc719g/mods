@@ -12,6 +12,9 @@ commented configuration file.
 
 [Original screenshots and comparison details](media/README.md)
 
+[Seaweed comparison](media/clear-waters-seaweed-comparison.png) shows the color
+separation around thin stems and rock ledges in a brighter scene.
+
 ## Requirements
 
 - Dave the Diver for Windows, 64-bit. The current target is Steam build

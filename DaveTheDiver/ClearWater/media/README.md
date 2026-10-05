@@ -1,17 +1,34 @@
 # Clear Waters release images
 
-[Comparison image](clear-waters-comparison.png) — 2560 × 1600 PNG with full
-views and close-ups of both screen edges. Use this for the mod page. The two
-3840 × 2160 originals are also ready to upload individually:
+Two 2560 × 1600 PNG comparisons include full views and close-ups of the screen
+edges. Each has a pair of untouched 3840 × 2160 originals for individual
+uploads.
+
+## Cave: coral and glowing rocks
+
+[Comparison image](clear-waters-comparison.png) shows color fringing and edge
+darkening in a darker scene. Captured three seconds apart.
 
 - [Clarity filter off](screenshots/clear-waters-off.jpg)
 - [Clarity filter on](screenshots/clear-waters-on.jpg)
 
-The screenshots were captured in-game on October 4, 2026, three seconds apart,
-using Clear Waters 0.1.0. They show the combined clarity filter, including color
-fringing, blur, and edge darkening. They are not a test of chromatic aberration
-alone. The camera moved slightly between captures; animation and input prompts
-also differ. The release candidate still needs its own in-game validation.
+## Seaweed: thin stems and rock ledges
+
+[Seaweed comparison](clear-waters-seaweed-comparison.png) shows separated
+colored outlines around the lower-right seaweed, coral, and left rock ledges in
+a brighter scene. Captured one second apart. The fish-capture notification
+disappears naturally between shots; the mod does not remove that notification.
+
+- [Clarity filter off](screenshots/clear-waters-seaweed-off.jpg)
+- [Clarity filter on](screenshots/clear-waters-seaweed-on.jpg)
+
+## Capture and composition details
+
+Both pairs were captured in-game on October 4, 2026, using Clear Waters 0.1.0.
+They show the combined clarity filter, including color fringing, blur, and edge
+darkening. They are not tests of chromatic aberration alone. The camera moved
+slightly between captures; animation and input prompts also differ. The release
+candidate still needs its own in-game validation.
 
 The source JPEGs are byte-for-byte copies of the captures. The comparison adds
 labels and crop outlines to reduced full views, followed by native-resolution
@@ -20,23 +37,28 @@ correction, or generated replacement of gameplay pixels. The crops use different
 vertical positions to follow the same scenery after the camera moved; neither
 image is warped to align it.
 
-| View | Original capture       | Left crop (x, y) | Right crop (x, y) |
-| ---- | ---------------------- | ---------------- | ----------------- |
-| Off  | `20261004181552_1.jpg` | 0, 975           | 3264, 1250        |
-| On   | `20261004181555_1.jpg` | 0, 928           | 3264, 1192        |
+| Scene   | View | Original capture       | Left crop (x, y) | Right crop (x, y) |
+| ------- | ---- | ---------------------- | ---------------- | ----------------- |
+| Cave    | Off  | `20261004181552_1.jpg` | 0, 975           | 3264, 1250        |
+| Cave    | On   | `20261004181555_1.jpg` | 0, 928           | 3264, 1192        |
+| Seaweed | Off  | `20261004183416_1.jpg` | 264, 1040        | 3264, 1400        |
+| Seaweed | On   | `20261004183417_1.jpg` | 264, 1025        | 3264, 1385        |
 
 Source SHA-256 checksums:
 
 ```text
 41a1ee6b8d8905cb3c1b8333da74e51a493a1323fe97272a7123d3291b33f1ac  clear-waters-off.jpg
 211ad177f2e5335064399d2784dc5e0f7ab764d53ad3e04b45bc880ca8f9eed5  clear-waters-on.jpg
+22e98c217b31c6f2975b4b349925050d9682837dd423617ca69df4a3f93ffad6  clear-waters-seaweed-off.jpg
+a0c1fd44a398b1204303bb6d07bf1b55fc04cfcb866845bd9994e2a0acdfead1  clear-waters-seaweed-on.jpg
 ```
 
-The editable layout is [comparison.html](comparison.html). Open it locally in a
-browser, or run `npm ci` and `npm run media:render` from the mod directory to
-rebuild the PNG. The renderer uses Playwright with an installed Chrome; set
-`CHROME_PATH` if it is elsewhere. Rendering uses a device scale of 1 to preserve
-the detail crops' source pixels.
+The shared editable layout is [comparison.html](comparison.html). Open it
+locally in a browser, adding `?scene=seaweed` to show the second pair. Run
+`npm ci` and `npm run media:render` from the mod directory to rebuild both PNGs.
+The renderer uses Playwright with an installed Chrome; set `CHROME_PATH` if it
+is elsewhere. Rendering uses a device scale of 1 to preserve the detail crops'
+source pixels.
 
 The water-drop mark is [web/favicon.svg](../web/favicon.svg), also used by the
 web controls. It is embedded in the plugin DLL. The screenshots, comparison

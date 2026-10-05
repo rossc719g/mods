@@ -12,12 +12,19 @@ try {
     viewport: { width: 2560, height: 1600 },
     deviceScaleFactor: 1,
   });
-  await page.goto(new URL("comparison.html", import.meta.url).href);
-  await page.evaluate(() => window.mediaReady);
-  await page.locator(".card").screenshot({
-    path: fileURLToPath(new URL("clear-waters-comparison.png", import.meta.url)),
-  });
-  console.log("Saved media/clear-waters-comparison.png (2560 × 1600)");
+  for (const [scene, filename] of [
+    ["cave", "clear-waters-comparison.png"],
+    ["seaweed", "clear-waters-seaweed-comparison.png"],
+  ]) {
+    const url = new URL("comparison.html", import.meta.url);
+    url.searchParams.set("scene", scene);
+    await page.goto(url.href);
+    await page.evaluate(() => window.mediaReady);
+    await page.locator(".card").screenshot({
+      path: fileURLToPath(new URL(filename, import.meta.url)),
+    });
+    console.log(`Saved media/${filename} (2560 × 1600)`);
+  }
 } finally {
   await browser.close();
 }

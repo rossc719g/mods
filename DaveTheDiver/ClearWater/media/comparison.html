@@ -76,6 +76,30 @@
     </main>
     <script>
       window.mediaReady = (async () => {
+        if (new URLSearchParams(location.search).get('scene') === 'seaweed') {
+          document.title = 'Clear Waters — seaweed comparison';
+          document.querySelector('.tagline').innerHTML = 'See the seaweed, without the color split.<br>Choose which screen effects to remove.';
+          document.querySelector('footer span').textContent = 'Captured 1 second apart. Camera, animation and HUD differ between shots.';
+          const crops = { off: [[264, 1040], [3264, 1400]], on: [[264, 1025], [3264, 1385]] };
+          for (const [mode, positions] of Object.entries(crops)) {
+            const section = document.querySelector('.' + mode);
+            const source = document.getElementById(mode);
+            source.src = 'screenshots/clear-waters-seaweed-' + mode + '.jpg';
+            source.alt = mode === 'off' ? 'Clarity filter off: colored copies around the seaweed and rock ledges.' : 'Clarity filter on: clear seaweed and rock ledges in the same scene.';
+            section.querySelector('.detail-heading').innerHTML = 'Look at the seaweed and ledge outlines<span>Original pixels · 100% size</span>';
+            const captions = ['<b>A</b> LEFT EDGE · ROCK LEDGE', '<b>B</b> LOWER RIGHT · SEAWEED'];
+            section.querySelectorAll('figcaption').forEach((caption, i) => caption.innerHTML = captions[i]);
+            section.querySelectorAll('canvas').forEach((canvas, i) => {
+              canvas.dataset.x = positions[i][0];
+              canvas.dataset.y = positions[i][1];
+            });
+            section.querySelectorAll('.callout').forEach((box, i) => {
+              box.style.left = positions[i][0] / 3840 * 100 + '%';
+              box.style.top = positions[i][1] / 2160 * 100 + '%';
+              box.style.right = 'auto';
+            });
+          }
+        }
         await Promise.all([...document.images].map(image => image.decode()));
         for (const canvas of document.querySelectorAll('canvas')) {
           const source = document.getElementById(canvas.dataset.source);
