@@ -76,19 +76,39 @@
     </main>
     <script>
       window.mediaReady = (async () => {
-        if (new URLSearchParams(location.search).get('scene') === 'seaweed') {
-          document.title = 'Clear Waters — seaweed comparison';
-          document.querySelector('.tagline').innerHTML = 'See the seaweed, without the color split.<br>Choose which screen effects to remove.';
-          document.querySelector('footer span').textContent = 'Captured 1 second apart. Camera, animation and HUD differ between shots.';
-          const crops = { off: [[264, 1040], [3264, 1400]], on: [[264, 1025], [3264, 1385]] };
-          for (const [mode, positions] of Object.entries(crops)) {
+        const scenes = {
+          seaweed: {
+            tagline: 'See the seaweed, without the color split.<br>Choose which screen effects to remove.',
+            note: 'Captured 1 second apart. Camera, animation and HUD differ between shots.',
+            crops: { off: [[264, 1040], [3264, 1400]], on: [[264, 1025], [3264, 1385]] },
+            offAlt: 'Clarity filter off: colored copies around the seaweed and rock ledges.',
+            onAlt: 'Clarity filter on: clear seaweed and rock ledges in the same scene.',
+            detail: 'Look at the seaweed and ledge outlines',
+            captions: ['<b>A</b> LEFT EDGE · ROCK LEDGE', '<b>B</b> LOWER RIGHT · SEAWEED'],
+          },
+          mirror: {
+            tagline: 'Clear outlines. Visible detail.<br>Choose which screen effects to remove.',
+            note: 'Captured 4 seconds apart. Camera, animation and HUD differ between shots.',
+            crops: { off: [[0, 1340], [3264, 40]], on: [[0, 1358], [3264, 72]] },
+            offAlt: 'Clarity filter off: doubled, colored outlines around the hand and hanging ice beside the mirror.',
+            onAlt: 'Clarity filter on: clearer hand and ice shapes in the same mirror chamber.',
+            detail: 'Look at the hand and hanging ice',
+            captions: ['<b>A</b> LOWER LEFT · HAND', '<b>B</b> UPPER RIGHT · HANGING ICE'],
+          },
+        };
+        const sceneKey = new URLSearchParams(location.search).get('scene');
+        const scene = scenes[sceneKey];
+        if (scene) {
+          document.title = 'Clear Waters — ' + sceneKey + ' comparison';
+          document.querySelector('.tagline').innerHTML = scene.tagline;
+          document.querySelector('footer span').textContent = scene.note;
+          for (const [mode, positions] of Object.entries(scene.crops)) {
             const section = document.querySelector('.' + mode);
             const source = document.getElementById(mode);
-            source.src = 'screenshots/clear-waters-seaweed-' + mode + '.jpg';
-            source.alt = mode === 'off' ? 'Clarity filter off: colored copies around the seaweed and rock ledges.' : 'Clarity filter on: clear seaweed and rock ledges in the same scene.';
-            section.querySelector('.detail-heading').innerHTML = 'Look at the seaweed and ledge outlines<span>Original pixels · 100% size</span>';
-            const captions = ['<b>A</b> LEFT EDGE · ROCK LEDGE', '<b>B</b> LOWER RIGHT · SEAWEED'];
-            section.querySelectorAll('figcaption').forEach((caption, i) => caption.innerHTML = captions[i]);
+            source.src = 'screenshots/clear-waters-' + sceneKey + '-' + mode + '.jpg';
+            source.alt = mode === 'off' ? scene.offAlt : scene.onAlt;
+            section.querySelector('.detail-heading').innerHTML = scene.detail + '<span>Original pixels · 100% size</span>';
+            section.querySelectorAll('figcaption').forEach((caption, i) => caption.innerHTML = scene.captions[i]);
             section.querySelectorAll('canvas').forEach((canvas, i) => {
               canvas.dataset.x = positions[i][0];
               canvas.dataset.y = positions[i][1];
@@ -97,6 +117,7 @@
               box.style.left = positions[i][0] / 3840 * 100 + '%';
               box.style.top = positions[i][1] / 2160 * 100 + '%';
               box.style.right = 'auto';
+              if (box.offsetTop < 26) box.querySelector('span').style.top = '-2px';
             });
           }
         }

@@ -1,8 +1,18 @@
 # Clear Waters release images
 
-Two 2560 × 1600 PNG comparisons include full views and close-ups of the screen
+Three 2560 × 1600 PNG comparisons include full views and close-ups of the screen
 edges. Each has a pair of untouched 3840 × 2160 originals for individual
 uploads.
+
+## Mirror chamber: hand and hanging ice
+
+[Mirror chamber comparison](clear-waters-mirror-comparison.png) is the main
+README image. It shows pronounced colored outlines and doubling around the
+lower-left hand and upper-right hanging ice. Captured four seconds apart. This
+is a view beside the mirror, not a capture of the teleport transition.
+
+- [Clarity filter off](screenshots/clear-waters-mirror-off.jpg)
+- [Clarity filter on](screenshots/clear-waters-mirror-on.jpg)
 
 ## Cave: coral and glowing rocks
 
@@ -24,11 +34,11 @@ disappears naturally between shots; the mod does not remove that notification.
 
 ## Capture and composition details
 
-Both pairs were captured in-game on October 4, 2026, using Clear Waters 0.1.0.
-They show the combined clarity filter, including color fringing, blur, and edge
-darkening. They are not tests of chromatic aberration alone. The camera moved
-slightly between captures; animation and input prompts also differ. The release
-candidate still needs its own in-game validation.
+All three pairs were captured in-game on October 4, 2026, using Clear Waters
+0.1.0. They show the combined clarity filter, including color fringing, blur,
+and edge darkening. They are not tests of chromatic aberration alone. The camera
+moved slightly between captures; animation and input prompts also differ. The
+release candidate still needs its own in-game validation.
 
 The source JPEGs are byte-for-byte copies of the captures. The comparison adds
 labels and crop outlines to reduced full views, followed by native-resolution
@@ -43,6 +53,8 @@ image is warped to align it.
 | Cave    | On   | `20261004181555_1.jpg` | 0, 928           | 3264, 1192        |
 | Seaweed | Off  | `20261004183416_1.jpg` | 264, 1040        | 3264, 1400        |
 | Seaweed | On   | `20261004183417_1.jpg` | 264, 1025        | 3264, 1385        |
+| Mirror  | Off  | `20261004185328_1.jpg` | 0, 1340          | 3264, 40          |
+| Mirror  | On   | `20261004185332_1.jpg` | 0, 1358          | 3264, 72          |
 
 Source SHA-256 checksums:
 
@@ -51,14 +63,16 @@ Source SHA-256 checksums:
 211ad177f2e5335064399d2784dc5e0f7ab764d53ad3e04b45bc880ca8f9eed5  clear-waters-on.jpg
 22e98c217b31c6f2975b4b349925050d9682837dd423617ca69df4a3f93ffad6  clear-waters-seaweed-off.jpg
 a0c1fd44a398b1204303bb6d07bf1b55fc04cfcb866845bd9994e2a0acdfead1  clear-waters-seaweed-on.jpg
+a82f2f079ae46b8d429e411f1885ba5100c6dd180cc439552b449f0ff29a7c82  clear-waters-mirror-off.jpg
+b30405bf4f6229e15086505935f73e00cc42fa57e29189d252145ee2e21cc451  clear-waters-mirror-on.jpg
 ```
 
 The shared editable layout is [comparison.html](comparison.html). Open it
-locally in a browser, adding `?scene=seaweed` to show the second pair. Run
-`npm ci` and `npm run media:render` from the mod directory to rebuild both PNGs.
-The renderer uses Playwright with an installed Chrome; set `CHROME_PATH` if it
-is elsewhere. Rendering uses a device scale of 1 to preserve the detail crops'
-source pixels.
+locally in a browser, adding `?scene=seaweed` or `?scene=mirror` for those
+pairs. The default view shows the cave. Run `npm ci` and `npm run media:render`
+from the mod directory to rebuild all three PNGs. The renderer uses Playwright
+with an installed Chrome; set `CHROME_PATH` if it is elsewhere. Rendering uses a
+device scale of 1 to preserve the detail crops' source pixels.
 
 The water-drop mark is [web/favicon.svg](../web/favicon.svg), also used by the
 web controls. It is embedded in the plugin DLL. The screenshots, comparison

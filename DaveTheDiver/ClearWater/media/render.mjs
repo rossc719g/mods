@@ -15,6 +15,7 @@ try {
   for (const [scene, filename] of [
     ["cave", "clear-waters-comparison.png"],
     ["seaweed", "clear-waters-seaweed-comparison.png"],
+    ["mirror", "clear-waters-mirror-comparison.png"],
   ]) {
     const url = new URL("comparison.html", import.meta.url);
     url.searchParams.set("scene", scene);

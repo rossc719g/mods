@@ -8,12 +8,12 @@ The mod works immediately with its defaults. Browser controls are optional and
 **disabled by default** on new installations. All preferences live in one
 commented configuration file.
 
-![Clear Waters off and on, with close-ups of both screen edges](media/clear-waters-comparison.png)
+![Clear Waters off and on, with close-ups of a hand and hanging ice](media/clear-waters-mirror-comparison.png)
 
 [Original screenshots and comparison details](media/README.md)
 
-[Seaweed comparison](media/clear-waters-seaweed-comparison.png) shows the color
-separation around thin stems and rock ledges in a brighter scene.
+More examples: [coral and glowing rocks](media/clear-waters-comparison.png), and
+[seaweed and rock ledges](media/clear-waters-seaweed-comparison.png).
 
 ## Requirements
 
